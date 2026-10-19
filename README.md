@@ -22,9 +22,9 @@ Or with variables:
 
 The tricky part is shell syntax, not arithmetic. Fish expands globs and parentheses before a command ever sees its arguments, so a bare `2*3` fails with `No matches for wildcard...`. The first working version required an `=` prefix and quotes around the expression.
 
-To remove that friction, `integration/konsole-calc.fish` binds Enter to a function that inspects the command line before fish parses it. If the line starts with `=`, it strips the `=` and any following whitespace. Otherwise, a regex checks whether the line looks like an arithmetic expression. In either case, the line is rewritten to `= "<expression>"` and executed, so globs and parentheses are never expanded. This gives me the original PowerShell experience.
+To remove that friction, `integration/konsole-calc.fish` binds Enter to a function that inspects the command line before fish parses it. If the line starts with `=`, it strips the `=` and any following whitespace. Otherwise, a regex checks whether the line looks like an arithmetic expression. In either case, the line is rewritten to `= "<expression>"` and executed, so globs and parentheses are never expanded. This gives me the original PowerShell experience. Variable expansion is handled by fish.
 
-Variable expansion is handled by fish.
+![](show.gif)
 
 ## wtFAQ
 
